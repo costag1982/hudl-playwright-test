@@ -1,0 +1,20 @@
+{
+  "name": "playwright-ts-new",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test-update-snapshot": "npx playwright test --update-snapshots",
+    "trace": "npx playwright show-trace test-results/first-some-test/trace.zip",
+    "show-report": "npx playwright show-report",
+    "prettier-format": "prettier --config .prettierrc '**/*.ts' --write"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.24.2",
+    "prettier": "^2.7.1"
+  }
+}
