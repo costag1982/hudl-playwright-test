@@ -1,3 +1,5 @@
+import * as dotenv from 'dotenv';
+dotenv.config({ path: __dirname + '/.env' });
 import type { PlaywrightTestConfig } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
@@ -10,7 +12,7 @@ const config: PlaywrightTestConfig = {
   retries: 0,
   reporter: [['html', { open: 'never' }]],
   use: {
-    headless: false,
+    headless: process.env.CI === 'true',
     channel: 'chrome',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
