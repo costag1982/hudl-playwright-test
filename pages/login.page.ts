@@ -6,6 +6,7 @@ export default class LoginPage {
   readonly passwordTextField: Locator;
   readonly loginBtn: Locator;
   readonly loginErrorMessage: Locator;
+  readonly needHelpLink: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -13,6 +14,7 @@ export default class LoginPage {
     this.passwordTextField = page.locator("input[name='password']");
     this.loginBtn = page.locator("button[type='submit']");
     this.loginErrorMessage = page.locator("[data-qa-id='error-display']");
+    this.needHelpLink = page.locator("'Need help?'");
   }
 
   async enterUsername(email: string) {
@@ -25,6 +27,10 @@ export default class LoginPage {
 
   async clickLoginBtn() {
     await this.loginBtn.click();
+  }
+
+  async clickNeedHelpLink() {
+    await this.needHelpLink.click();
   }
 
   async login(email: string, password: string) {
