@@ -9,7 +9,7 @@ const config: PlaywrightTestConfig = {
     timeout: 5000
   },
   fullyParallel: false,
-  retries: 0,
+  retries: 1,
   reporter: [['html', { open: 'never' }]],
   use: {
     headless: process.env.CI === 'true',
