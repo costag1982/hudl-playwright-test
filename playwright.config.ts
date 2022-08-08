@@ -13,7 +13,7 @@ const config: PlaywrightTestConfig = {
   reporter: [['html', { open: 'never' }]],
   use: {
     launchOptions: {
-      slowMo: 50
+      slowMo: process.env.CI === 'true' ? 150 : 0
     },
     headless: process.env.CI === 'true',
     channel: 'chrome',
