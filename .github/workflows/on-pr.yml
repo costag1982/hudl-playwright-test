@@ -1,9 +1,6 @@
-name: Playwright Tests
-on:
-  push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
+name: Playwright Tests On Pull Request
+
+on: pull_request
   
 env:
   CI: true
