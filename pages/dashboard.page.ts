@@ -6,8 +6,7 @@ export default class DashboardPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.eleTeamName = page.locator(
-      'div.hui-primaryteamswitcher > a > div.hui-primaryteamswitcher__display-name > span'
-    );
+    // this also returns single element but is ugly 'div.hui-primaryteamswitcher > a > div.hui-primaryteamswitcher__display-name > span'
+    this.eleTeamName = page.locator('span', { hasText: 'Newcastle Jets FC' }).first();
   }
 }

@@ -7,7 +7,7 @@ export default class HomePage {
 
   constructor(page: Page) {
     this.page = page;
-    this.acceptCookieButton = page.locator('#onetrust-accept-btn-handler');
+    this.acceptCookieButton = page.locator("'Accept All Cookies'");
     this.skipNavLInk = page.locator("'Skip to main content'");
   }
 
