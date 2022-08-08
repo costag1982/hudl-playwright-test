@@ -12,10 +12,7 @@ export default class HomePage {
   }
 
   async clickAcceptCookiesButton() {
-    let cookieElement = this.acceptCookieButton;
-    if (cookieElement == null) {
-      console.log('cookie element not visible');
-    } else {
+    if (process.env.CI === 'false') {
       await this.acceptCookieButton.click();
     }
   }
@@ -24,13 +21,8 @@ export default class HomePage {
     await this.page.goto('/');
     await this.clickAcceptCookiesButton();
 
-    await this.skipNavLInk
-      .click() //this link does not always appear so even though its in the dom
-      .then(() => {
-        // element is clicked continue.
-      })
-      .catch((e) => {
-        // do not fail test if element is not clickable.
-      });
+    if (process.env.CI === 'false') {
+      await this.skipNavLInk.click();
+    }
   }
 }
