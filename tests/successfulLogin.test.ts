@@ -1,11 +1,9 @@
 import test, { expect } from '../fixtures/basePages';
 import * as data from '../data/user.json';
+import { faker } from '@faker-js/faker';
 
 test.describe('User can succesfully login: @login', () => {
   test('Successful Login first attempt', async ({ loginPage, homePage, dashboardPage, navPage, page }) => {
-    // await test.step('Log in', async () => {
-    //   // ...
-    // });
 
     await homePage.visit();
     expect(await page.title()).toBe('Hudl: We Help Teams and Athletes Win');
@@ -20,10 +18,6 @@ test.describe('User can succesfully login: @login', () => {
     await expect(navPage.eleloggedInName).toHaveText('Costa G');
     expect(page.url()).toContain('/home');
     await expect(dashboardPage.eleTeamName).toHaveText('Newcastle Jets FC');
-
-    // expect(await page.screenshot({
-    //   fullPage: true
-    // })).toMatchSnapshot("letcode.png")
   });
 
   test('User gets password wrong then corrects it and logs in', async ({
@@ -40,7 +34,7 @@ test.describe('User can succesfully login: @login', () => {
     expect(await page.title()).toBe('Log In - Hudl');
 
     await loginPage.enterUsername(data.email);
-    await loginPage.enterPassword('test1234');
+    await loginPage.enterPassword(faker.internet.password());
     await loginPage.clickLoginBtn();
 
     await expect(loginPage.loginErrorMessage).toHaveText("We didn't recognize that email and/or password.Need help?");

@@ -12,7 +12,12 @@ export default class HomePage {
   }
 
   async clickAcceptCookiesButton() {
-    await this.acceptCookieButton.click();
+    let cookieElement = this.acceptCookieButton;
+    if (cookieElement == null) {
+      console.log("cookie element not visible");
+    } else {
+      await this.acceptCookieButton.click();
+    }
   }
 
   async visit() {
