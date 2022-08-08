@@ -23,6 +23,6 @@
     "prettier": "^2.7.1"
   },
   "lint-staged": {
-    "*.{js,ts}": "prettier --write"
+    "*.{js,ts}": "prettier --config .prettierrc '**/*.ts' --write"
   }
 }
