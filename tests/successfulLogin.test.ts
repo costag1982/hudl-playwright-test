@@ -4,7 +4,6 @@ import { faker } from '@faker-js/faker';
 
 test.describe('User can succesfully login: @login', () => {
   test('Successful Login first attempt', async ({ loginPage, homePage, dashboardPage, navPage, page }) => {
-
     await homePage.visit();
     expect(await page.title()).toBe('Hudl: We Help Teams and Athletes Win');
 

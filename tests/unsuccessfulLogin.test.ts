@@ -48,6 +48,6 @@ test.describe('User fails to login with invalid credentials: @login', () => {
       await loginPage.clickLoginBtn();
       await expect(loginPage.loginErrorMessage).toHaveText(expectedMessage);
       await expect(loginPage.loginBtn).toBeDisabled();
-    };
+    }
   });
 });

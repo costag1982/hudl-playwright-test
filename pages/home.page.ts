@@ -14,7 +14,7 @@ export default class HomePage {
   async clickAcceptCookiesButton() {
     let cookieElement = this.acceptCookieButton;
     if (cookieElement == null) {
-      console.log("cookie element not visible");
+      console.log('cookie element not visible');
     } else {
       await this.acceptCookieButton.click();
     }
