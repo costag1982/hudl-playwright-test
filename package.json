@@ -9,7 +9,7 @@
     "trace": "npx playwright show-trace test-results/first-some-test/trace.zip",
     "show-report": "npx playwright show-report",
     "prettier-format": "prettier --config .prettierrc '**/*.ts' --write",
-    "prettier-watch": "onchange '**/*.ts' -- npm run prettier-format"
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -18,7 +18,11 @@
     "@faker-js/faker": "^7.3.0",
     "@playwright/test": "^1.24.2",
     "dotenv": "^16.0.1",
-    "onchange": "^7.1.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1"
+  },
+  "lint-staged": {
+    "*.{js,ts}": "prettier --write"
   }
 }
