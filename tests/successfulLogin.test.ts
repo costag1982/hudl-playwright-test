@@ -9,7 +9,6 @@ test.describe('User can succesfully login: @login', () => {
 
     await navPage.clickLoginBtn();
     expect(await page.title()).toBe('Log In - Hudl');
-    expect(await page.title()).toBe('Log In - Hudl');
 
     await loginPage.enterUsername(data.email);
     await loginPage.enterPassword(data.password);
