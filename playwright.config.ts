@@ -12,6 +12,9 @@ const config: PlaywrightTestConfig = {
   retries: 1,
   reporter: [['html', { open: 'never' }]],
   use: {
+    launchOptions: {
+      slowMo: 50
+    },
     headless: process.env.CI === 'true',
     channel: 'chrome',
     screenshot: 'only-on-failure',
