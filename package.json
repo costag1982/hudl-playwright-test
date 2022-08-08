@@ -9,7 +9,7 @@
     "trace": "npx playwright show-trace test-results/first-some-test/trace.zip",
     "show-report": "npx playwright show-report",
     "prettier-format": "prettier --config .prettierrc '**/*.ts' --write",
-    "prettier-watch": "onchange '**/*.ts' -- prettier --write {{changed}}"
+    "prettier-watch": "onchange '**/*.ts' -- npm run prettier-format"
   },
   "keywords": [],
   "author": "",
