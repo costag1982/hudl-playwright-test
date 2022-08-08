@@ -16,11 +16,11 @@ export default class LoginPage {
   }
 
   async enterUsername(email: string) {
-    await this.emailTextField.type(email);
+    await this.emailTextField.fill(email);
   }
 
   async enterPassword(password: string) {
-    await this.passwordTextField.type(password);
+    await this.passwordTextField.fill(password);
   }
 
   async clickLoginBtn() {
