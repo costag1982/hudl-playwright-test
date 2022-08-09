@@ -8,6 +8,8 @@ on:
   
 env:
   CI: true
+  BASE_URL: https://www.hudl.com
+  USER_PASSWORD: ${{ secrets.HUDL_USER_PASSWORD }}
 
 jobs:
   test:
