@@ -17,7 +17,7 @@ const config: PlaywrightTestConfig = {
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     actionTimeout: 0,
-    baseURL: 'https://www.hudl.com',
+    baseURL: process.env.BASE_URL,
     trace: 'retain-on-failure'
   },
   grep: [new RegExp('@login')]
