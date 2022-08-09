@@ -8,6 +8,7 @@ on:
   
 env:
   CI: true
+  USER_PASSWORD: ${{ secrets.HUDL_USER_PASSWORD }}
 
 jobs:
   test:
