@@ -25,9 +25,9 @@ Run `make install` to install all dependencies from the root of the project.
 
 You also need to create a **.env** file at the root of the project and add the following environment variables:
 
-CI=false
-BASE_URL='https://www.hudl.com'
-USER_PASSWORD='INSERT_PASSWORD_HERE'
+CI=false  
+BASE_URL='https://www.hudl.com'  
+USER_PASSWORD='INSERT_PASSWORD_HERE'  
 
 As this test framework is testing against production, you will need to add the password into the **.env** file.
 
