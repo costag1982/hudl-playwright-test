@@ -18,7 +18,17 @@ const config: PlaywrightTestConfig = {
     video: 'retain-on-failure',
     actionTimeout: 0,
     baseURL: process.env.BASE_URL,
-    trace: 'retain-on-failure'
+    trace: 'retain-on-failure',
+    launchOptions: {
+      logger: {
+        isEnabled: () => true,
+        log: (name, severity, message, args) => {
+          if (severity === 'error') {
+            console.log(message);
+          }
+        }
+      }
+    }
   },
   grep: [new RegExp('@login')]
 };
