@@ -4,13 +4,13 @@ import type { PlaywrightTestConfig } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
   testDir: './tests',
-  // timeout: 30 * 1000,
+  timeout: 5 * 60 * 1000,
   expect: {
     timeout: 5000
   },
   fullyParallel: false,
   retries: 1,
-  reporter: [['html', { open: 'never' }]],
+  reporter: [[process.env.CI === 'true' ? 'github' : 'html', { open: 'never' }]],
   use: {
     headless: process.env.CI === 'true',
     channel: 'chrome',
@@ -20,14 +20,7 @@ const config: PlaywrightTestConfig = {
     baseURL: process.env.BASE_URL,
     trace: 'retain-on-failure',
     launchOptions: {
-      logger: {
-        isEnabled: () => true,
-        log: (name, severity, message, args) => {
-          if (severity === 'error') {
-            console.log(message);
-          }
-        }
-      }
+      slowMo: 0
     }
   },
   grep: [new RegExp('@login')]
